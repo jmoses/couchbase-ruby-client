@@ -20,14 +20,14 @@ $:.push File.expand_path('../lib', __FILE__)
 require 'couchbase/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'jmoses-couchbase'
+  s.name        = 'couchbase'
   s.version     = Couchbase::VERSION
-  s.author      = ['Couchbase', 'Jon Moses']
-  s.email       = ['support@couchbase.com', 'jon@burningbush.us']
+  s.author      = 'Couchbase'
+  s.email       = 'support@couchbase.com'
   s.license     = 'ASL-2'
   s.homepage    = 'http://couchbase.org'
-  s.summary     = %q{Couchbase ruby driver (updated gemspec for connection-pool 2)}
-  s.description = %q{The official client library for use with Couchbase Server.  This fork has been updated to require connection-pool 2.0, instead of 1.0}
+  s.summary     = %q{Couchbase ruby driver}
+  s.description = %q{The official client library for use with Couchbase Server.}
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
@@ -37,13 +37,14 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'yaji', '~> 0.3', '>= 0.3.2'
   s.add_runtime_dependency 'multi_json', '~> 1.0'
-  s.add_runtime_dependency 'connection_pool', '~> 2.0.0'
+  s.add_runtime_dependency 'connection_pool', '<= 3.0.0', '>= 1.0.0'
 
   s.add_development_dependency 'rake'
   s.add_development_dependency 'minitest', '~> 5.0', '>= 5.0.4'
   s.add_development_dependency 'rake-compiler', '~> 0.7', '>= 0.7.5'
   s.add_development_dependency 'mini_portile', '~> 0.5', '>= 0.5.2'
   s.add_development_dependency 'yajl-ruby', '~> 1.1', '>= 1.1.0'
-  s.add_development_dependency 'active_support'
+  s.add_development_dependency 'activesupport'
   s.add_development_dependency 'eventmachine'
+  s.add_development_dependency 'em-synchrony'
 end
